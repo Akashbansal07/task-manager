@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5001';
+const BASE_URL = import.meta.env.VITE_APP_API_URL || 'http://localhost:5001';
 
 export const fetchTasks = async () => {
   const token = localStorage.getItem('token');
@@ -50,7 +50,6 @@ export const updateTask = async (taskId, taskData) => {
   return response.json();
 };
 
-// In utils/api.js
 export const deleteTask = async (taskId) => {
     const token = localStorage.getItem('token');
     const response = await fetch(`${BASE_URL}/tasks/${taskId}`, {

@@ -13,7 +13,7 @@ const Signup = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:5001/user/register', {
+      const response = await fetch(`${import.meta.env.VITE_APP_API_URL}/user/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
